@@ -19,7 +19,7 @@ type Social = {
     description:
       "Hello, I'm a college student, currently on the second year of my bachelor's degree in Eletrical and Computer Engineering at Instituto Superior Técnico. This is where I'll post about my hobbies, projects and academics. Feel free to contact me if you like what you see here. ",
     aboutme:
-        "I'm very interested in electronics, cars and computers, and Im always finding ways to work with all of this simultaneously, as you can see in my projects. I also try to have a good work-life (study-life) balance by going to the gym, running or just hanging out with my friends.",
+        "I'm very interested in electronics, cars and computers, and I'm always finding ways to work with all of this simultaneously, as you can see in my projects.",
       socials: [
       {
         label: "LinkedIn",
