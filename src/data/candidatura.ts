@@ -35,6 +35,16 @@ export type Candidatura = {
       Nota: "18",
       Pinned: false,
     },
+    {
+      UC: "Sinais e Sistemas",
+      Nota: "14",
+      Pinned: false,
+    },
+    {
+      UC: "Eletrotecnia Teórica",
+      Nota: "14",
+      Pinned: false,
+    },
   ];
   
   export default candidaturas;
