@@ -28,12 +28,12 @@ export type Candidatura = {
     {
       UC: "Programação Concorrente",
       Nota: "17",
-      Pinned: false,
+      Pinned: true,
     },
     {
       UC: "Análise de Circuitos",
       Nota: "18",
-      Pinned: false,
+      Pinned: true,
     },
     {
       UC: "Sinais e Sistemas",
