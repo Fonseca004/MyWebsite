@@ -1,0 +1,25 @@
+---
+import type { Candidatura } from "../data/candidatura.ts";
+
+type Props = Candidatura;
+
+const { UC, Nota } = Astro.props;
+
+const formatTechs = (values: string[]) =>
+  values.toString().replaceAll(",", " • ");
+---
+
+<>
+  {(
+    <div
+      class="flex flex-col gap-1 rounded-md p-4 "
+    >
+      <div>
+        <p class="text-lg text-neutral-950">{UC}</p>
+        <p class="text-neutral-750">Nota: {Nota}</p>
+      </div>
+    </div>
+  )}
+</>
+
+

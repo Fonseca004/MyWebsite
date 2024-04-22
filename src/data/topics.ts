@@ -10,7 +10,7 @@ export type Topic = {
     },
     {
       title: "Web Development",
-      techs: ["Astro", "TailwindCSS", "HTML"],
+      techs: ["Astro", "TailwindCSS", "HTML", "React", "JavaScript"],
     },
     {
       title: "Hardware",

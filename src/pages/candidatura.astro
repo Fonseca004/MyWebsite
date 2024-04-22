@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets"
+
+import CandLayout from '../layouts/CandLayout.astro';
+import CandCard from "../components/CandCard.astro";
+import convertAsteriskToStrongTag from "../utils/convertAsteriskToStrongTag.ts";
+import candidaturas from "../data/candidatura.ts";
+---
+
+
+<CandLayout title="José Fonseca">
+	<main class="flex flex-col gap-10">
+
+        <div class="flex flex-col gap-1">
+            <p>DEEC / IST - Call 4 TAs (2024/2025)</p>
+            <p>Candidatura - José Fonseca 106305 </p>
+        </div>
+
+		<article class="flex flex-col gap-1">
+			<header class="flex w-full flex-row justify-between gap-2">
+				<h3 class="text-xl text-blue-700">
+                    UCs relevantes para as áreas de ensino do DEEC
+				</h3>
+			</header>
+		  
+			<section class="flex flex-col gap-1">
+				{
+					candidaturas
+						.filter(candidatura => candidatura.Pinned == true)
+						.map((candidatura, index) => <CandCard  {...candidatura} />)
+				}
+			</section>
+		</article>
+
+		<div class="border-t border-neutral-500 w-full"></div>
+
+		<article class="flex flex-col gap-1">
+			<header class="flex w-full flex-row justify-between gap-2">
+				<h3 class="text-xl text-blue-700">
+					Outras UCs
+				</h3>
+			</header>
+		  
+			<section class="flex flex-col gap-1">
+				{
+					candidaturas    
+						.filter(candidatura => candidatura.Pinned == false)
+						.map((candidatura, index) => <CandCard  {...candidatura} />)
+				}
+			</section>
+
+		</main>
+</CandLayout>

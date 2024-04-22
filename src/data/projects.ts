@@ -10,7 +10,7 @@ export type Project = {
     {
       title: "This Website",
       techs: ["Astro", "TailwindCSS", "Cloudflare"],
-      link: "https://github.com/Fonseca004/Fonseca004.github.io",
+      link: "https://github.com/Fonseca004/MyWebsite",
       pinned: true,
     },
     {
