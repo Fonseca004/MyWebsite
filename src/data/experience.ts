@@ -22,7 +22,7 @@ export type Experience = {
       title: "Highschool",
       institution: "Instituto dos Pupilos do Exército",
       techs: ["Ladder CLP"],
-      description: "",
+      description: "Técnico de Eletrónica Automação e Comando, 19/20 valores",
       locatime: "Lisbon, 2019-2022",
       category: "school",
       link: "https://pupilos.pt/",
@@ -73,11 +73,11 @@ export type Experience = {
       link: "https://jeec.ist/",
     },
     {
-      title: "Premio General Xavier Correia Barreto",
+      title: "Premio General António Xavier Correia Barreto",
       institution: "Instituto dos Pupilos do Exército",
       techs: ["Tech", "Volunteer"],
-      description: "SOu sugoy!",
-      locatime: "Lisbon, 2023",
+      description: "Aluno 218/19",
+      locatime: "Lisbon, 2022",
       category: "Award",
       link: "",
     }
