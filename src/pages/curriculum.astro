@@ -1,0 +1,104 @@
+---
+import { Image } from "astro:assets"
+
+import Layout from '../layouts/Layout.astro';
+import CourseCard from "../components/CourseCard.astro";
+import convertAsteriskToStrongTag from "../utils/convertAsteriskToStrongTag.ts";
+import experiences from "../data/experience.ts";
+import type experience from "../data/experience.ts";
+---
+
+<Layout title="Fonseca's Curriculum">
+	<main class="flex flex-col gap-10">
+
+		<article class="flex flex-col gap-1">
+			<header class="flex w-full flex-row justify-between gap-2">
+				<h3 class="text-xl text-blue-700">
+					Academic Journey
+				</h3>
+			</header>
+		  
+			<section class="flex flex-col gap-1">
+				{
+					experiences.length !== 0 &&
+					experiences
+						.filter(experience => experience.category == "school")
+						.map((experience, index) => <CourseCard  {...experience} />)
+				}
+			</section>
+		</article>
+
+		<div class="border-t border-neutral-500 w-full"></div>
+
+		<article class="flex flex-col gap-1">
+			<header class="flex w-full flex-row justify-between gap-2">
+				<h3 class="text-xl text-blue-700">
+					Professional Experience
+				</h3>
+			</header>
+		  
+			<section class="flex flex-col gap-1">
+				{
+					experiences.length !== 0 &&
+					experiences
+						.filter(experience => experience.category == "professional")
+						.map((experience, index) => <CourseCard  {...experience} />)
+				}
+			</section>
+		</article>
+
+		<div class="border-t border-neutral-500 w-full"></div>
+		
+		<article class="flex flex-col gap-6 md:flex-row md:justify-between md:gap-12">
+			<article class="flex flex-col gap-1">
+				<header class="flex w-full flex-row justify-between gap-2">
+					<h3 class="text-xl text-blue-700">
+						Certificates
+					</h3>
+				</header>
+			
+				<section class="flex flex-col gap-1">
+					{
+						experiences.length !== 0 &&
+						experiences
+							.filter(experience => experience.category == "Certificates")
+							.map((experience, index) => <CourseCard  {...experience} />)
+					}
+				</section>
+			
+				<header class="flex w-full flex-row justify-between gap-2">
+					<h3 class="text-xl text-blue-700">
+						Volunteer
+					</h3>
+				</header>
+			
+				<section class="flex flex-col gap-1">
+					{
+						experiences.length !== 0 &&
+						experiences
+							.filter(experience => experience.category == "Volunteer")
+							.map((experience, index) => <CourseCard  {...experience} />)
+					}
+				</section>
+			</article>
+
+			<article class="flex flex-col gap-1">
+				<header class="flex w-full flex-row justify-between gap-2">
+					<h3 class="text-xl text-blue-700">
+						Awards
+					</h3>
+				</header>
+			
+				<section class="flex flex-col gap-1">
+					{
+						experiences.length !== 0 &&
+						experiences
+							.filter(experience => experience.category == "Award")
+							.map((experience, index) => <CourseCard  {...experience} />)
+					}
+				</section>
+			</article>
+
+		</article>
+		</main>
+</Layout>

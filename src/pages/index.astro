@@ -1,0 +1,91 @@
+---
+import { Image } from "astro:assets"
+
+import Layout from '../layouts/Layout.astro';
+import presentation from '../data/presentation.ts';
+import SocialLinks from "../components/SocialLinks.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import TopicCard from "../components/TopicCard.astro";
+import convertAsteriskToStrongTag from "../utils/convertAsteriskToStrongTag.ts";
+import projects from "../data/projects.ts";
+import topics from "../data/topics.ts";
+---
+
+<Layout title="Fonseca's Portfolio">
+	<main class="flex flex-col gap-20">
+		  <article
+			class="flex flex-col gap-8 md:flex-row-reverse md:justify-end md:gap-12">
+		  { 
+			presentation.profile && (
+			  <Image
+				src={presentation.profile}
+				class="w-1/2 self-center rounded"
+				alt="Your Profile"
+				width="500"
+				height="500"
+			  />
+			)
+		  }
+			<div class="flex flex-col gap-8">
+			  <h1 class="text-3xl text-neutral-950">
+				{presentation.title}
+			  </h1>
+			  <h2
+				class="w-auto max-w-[60ch] leading-6 text-base "
+				set:html={convertAsteriskToStrongTag(presentation.description)}
+			  />
+			  <h2
+				  class="w-auto max-w-[60ch] leading-6 text-base"
+				  set:html={convertAsteriskToStrongTag(presentation.aboutme)}
+				/>
+			</div>
+		  </article>	
+		  
+		  <article class="flex flex-col gap-8 md:flex-row md:justify-between md:gap-12">
+			<article class="flex flex-col gap-8 flex-grow">
+				<header class="flex w-full flex-row justify-between gap-2">
+					<h3 class="text-xl text-neutral-950">
+						Selected projects
+					</h3>
+					<div><a class="text-lg hover:text-blue-500" href="/">See more!</a></div>
+				</header>
+		
+				<section class="flex flex-col gap-4">
+					{
+						projects.length !== 0 &&
+						projects
+							.filter(project => project.pinned) // Filter only pinned projects
+							.map((project, index) => <ProjectCard  {...project} />)
+					}
+				</section>
+			</article>
+			<article class="flex flex-col gap-2 flex-grow">
+				<header class="flex w-full flex-row justify-between gap-2">
+					<h3 class="text-xl text-neutral-950">
+						Interests and Skills
+					</h3>
+				</header>
+				
+				<section class="flex flex-col gap-1">
+					{
+						topics.map((project, index) => (
+							<div class="flex items-center">
+								<span class="text-blue-500 mr-2">&#8226;</span> {/* Dot */}
+								<TopicCard  {...project} />
+							</div>
+						))
+					}
+				</section>
+			</article>
+			
+		</article>
+				
+		<p class="text-base">
+			Feel free to take a look at my 
+			<a class="underline decoration-blue-600 hover:decoration-red-500 transition-colors duration-1000 after:content-['_↗']" href="/curriculum">Curriculum Vitae</a>
+			and contact me if you want to!
+		</p>
+		  
+		</main>
+</Layout>
+
