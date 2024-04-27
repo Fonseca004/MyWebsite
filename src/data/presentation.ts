@@ -30,7 +30,7 @@ type Social = {
         link: "https://github.com/Fonseca004",
       },
     ],
-    profile: "/public/Untitled.jpeg",
+    profile: "/Untitled.jpeg",
   };
 
   

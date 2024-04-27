@@ -22,7 +22,7 @@ export type Experience = {
       title: "Highschool",
       institution: "Instituto dos Pupilos do Exército",
       techs: ["Ladder CLP"],
-      description: "Técnico de Eletrónica Automação e Comando, 19/20 valores",
+      description: "",
       locatime: "Lisbon, 2019-2022",
       category: "school",
       link: "https://pupilos.pt/",

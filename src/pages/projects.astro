@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets"
+
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from "../components/ProjectCard.astro";
+import ProjectCard2 from "../components/ProjectCard2.astro";
+import projects from "../data/projects.ts";
+import type experience from "../data/experience.ts";
+---
+
+<Layout title="Fonseca's Projects">
+	<main class="flex flex-col gap-10">
+
+		<article class="flex flex-col gap-4">
+			<header class="flex w-full flex-row justify-between gap-2">
+				<h3 class="text-xl text-blue-700">
+					Tech Projects
+				</h3>
+			</header>
+		  
+			<section class="flex flex-col gap-4">
+				{
+					projects
+						.map((project, index) => <ProjectCard2  {...project} />)
+				}
+			</section>
+		</article>
+
+		<div class="border-t border-neutral-500 w-full"></div>
+
+		<article class="flex flex-col gap-1">
+			<header class="flex w-full flex-row justify-between gap-2">
+				<h3 class="text-xl text-blue-700">
+					Other Projects
+				</h3>
+			</header>
+		  
+		
+		</article>
+
+		</main>
+</Layout>
