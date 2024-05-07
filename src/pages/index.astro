@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets"
-
 import Layout from '../layouts/Layout.astro';
 import presentation from '../data/presentation.ts';
 import ProjectCard from "../components/ProjectCard.astro";
@@ -8,6 +7,9 @@ import TopicCard from "../components/TopicCard.astro";
 import convertAsteriskToStrongTag from "../utils/convertAsteriskToStrongTag.ts";
 import projects from "../data/projects.ts";
 import topics from "../data/topics.ts";
+
+import { CoinDeskAPI } from "../components/CoinDeskAPI.jsx";
+const data = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json').then(res => res.json());
 ---
 
 <Layout title="Fonseca's Portfolio">
@@ -78,6 +80,11 @@ import topics from "../data/topics.ts";
 			</article>
 			
 		</article>
+
+		<CoinDeskAPI client:load btcData={data} />
+
+		<!-- Bitcoin API section -->
+		
 				
 		<p class="text-base">
 			Feel free to take a look at my 
